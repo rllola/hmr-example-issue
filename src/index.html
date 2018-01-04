@@ -24,12 +24,10 @@ console.log(store)
 const render = (store) => {
   const App = require('./app').default
   console.log(store instanceof Store)
-  ReactDOM.render(<AppContainer><App store={store} /></AppContainer>, document.getElementById('App'))
+  ReactDOM.render(<App store={store} />, document.getElementById('App'))
 }
 
 render(store)
-if (module.hot) {
-  module.hot.accept(render.bind(null, store))
-}
+
 </script>
 </html>

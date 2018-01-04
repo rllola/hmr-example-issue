@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import Store from './store'
+import { hot } from 'react-hot-loader'
 
 @observer
 class App extends Component {
@@ -9,9 +10,9 @@ class App extends Component {
 
     return (
       <div>
-        <h2>Welcome to {this.props.store.city}, Lola !</h2>
+        <h2>Welcome to {this.props.store.city}, Guillaume !</h2>
       </div>)
   }
 }
 
-export default App
+export default hot(module)(App)
