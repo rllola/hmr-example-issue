@@ -8,9 +8,9 @@ let mainWindow
 
 const isDevMode = process.execPath.match(/[\\/]electron/)
 
-if (isDevMode) enableLiveReload({strategy: 'react-hmr'})
-
 const createWindow = async () => {
+  if (isDevMode) enableLiveReload({strategy: 'react-hmr'})
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,

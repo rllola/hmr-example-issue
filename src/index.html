@@ -12,22 +12,9 @@ import 'babel-polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './app'
 
-import { AppContainer } from 'react-hot-loader'
-import Store from './store'
-
-// const store = new Store('Paris')
-var store = new Store('Paris')
-
-console.log(store)
-
-const render = (store) => {
-  const App = require('./app').default
-  console.log(store instanceof Store)
-  ReactDOM.render(<App store={store} />, document.getElementById('App'))
-}
-
-render(store)
+ReactDOM.render(<App />, document.getElementById('App'))
 
 </script>
 </html>
