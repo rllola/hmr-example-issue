@@ -13,13 +13,14 @@ import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'mobx-react'
 import Store from './store'
 
 var store = new Store('Paris')
 
 const render = () => {
   const App = require('./app').default
-  ReactDOM.render(<AppContainer><App store={store} /></AppContainer>, document.getElementById('App'))
+  ReactDOM.render(<AppContainer><Provider store={store}><App /></Provider></AppContainer>, document.getElementById('App'))
 }
 
 render()
