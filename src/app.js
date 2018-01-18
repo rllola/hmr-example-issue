@@ -1,18 +1,11 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React from 'react'
+import Home from './home'
 import Store from './store'
-import { hot } from 'react-hot-loader'
 
-@observer
-class App extends Component {
-  render () {
-    console.log(this.props.store instanceof Store)
-
-    return (
-      <div>
-        <h2>Welcome to {this.props.store.city}, Guillaume !</h2>
-      </div>)
-  }
+const App = (props) => {
+  console.log(props.store instanceof Store)
+  console.log(store)
+  return (<Home store={props.store} />)
 }
 
-export default hot(module)(App)
+export default App
